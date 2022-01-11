@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_list_stock"
+        android:title="@string/list_stock"
+        android:icon="@drawable/ic_baseline_list_alt_24" />
+    <item
+        android:id="@+id/menu_kasir"
+        android:title="@string/kasir"
+        android:icon="@drawable/ic_baseline_cashier_24" />
+    <item
+        android:id="@+id/menu_transaksi"
+        android:title="@string/riwayat_transaksi"
+        android:icon="@drawable/ic_baseline_history_24" />
+</menu>

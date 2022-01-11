@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="6sp"
+    tools:context=".ui.LoginActivity">
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="128sp"
+        android:layout_height="128sp"
+        android:layout_marginTop="12sp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:hint="@string/url"
+        android:paddingStart="8sp"
+        android:paddingEnd="8sp"
+        app:errorIconDrawable="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appLogo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:textSize="16sp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/etUsername" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8sp"
+        android:layout_marginTop="8sp"
+        android:text="@string/check"
+        app:icon="@drawable/ic_baseline_miscellaneous_services_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutURL" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCheck"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12sp"
+        android:indeterminateTint="?attr/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/btnCheck"
+        app:layout_constraintTop_toTopOf="@id/btnCheck"
+        app:layout_constraintBottom_toBottomOf="@id/btnCheck"
+        style="?attr/progressBarStyle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:hint="@string/username"
+        android:paddingStart="8sp"
+        android:paddingEnd="8sp"
+        app:errorIconDrawable="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCheck"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:textSize="16sp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/etPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:hint="@string/password"
+        android:paddingStart="8sp"
+        android:paddingEnd="8sp"
+        app:errorIconDrawable="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutUsername"
+        app:passwordToggleEnabled="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:inputType="textCapCharacters|textPassword"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:imeOptions="actionDone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8sp"
+        android:layout_marginTop="8sp"
+        android:text="@string/login"
+        app:icon="@drawable/ic_baseline_login_24"
+        app:layout_constraintEnd_toEndOf="@id/layoutPassword"
+        app:layout_constraintTop_toBottomOf="@id/layoutPassword" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12sp"
+        android:indeterminateTint="?attr/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/btnLogin"
+        app:layout_constraintTop_toTopOf="@id/btnLogin"
+        app:layout_constraintBottom_toBottomOf="@id/btnLogin"
+        style="?attr/progressBarStyle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

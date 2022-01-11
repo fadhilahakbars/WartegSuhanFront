@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:paddingTop="16sp"
+    android:paddingStart="16sp"
+    android:paddingEnd="16sp"
+    android:paddingBottom="8sp"
+    android:background="?attr/colorPrimary">
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:paddingStart="4sp"
+        android:paddingEnd="4sp"
+        android:text="@string/search"
+        android:textColor="@color/text_invert"
+        android:textAppearance="?attr/textAppearanceSearchResultTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="?attr/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTitle"
+        app:layout_constraintBottom_toTopOf="@id/btnCancel"
+        style="?attr/progressBarStyle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMenu"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_marginTop="8sp"
+        android:paddingStart="4sp"
+        android:paddingEnd="4sp"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTitle"
+        app:layout_constraintBottom_toTopOf="@id/btnCancel"
+        tools:listitem="@layout/item_menu"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4sp"
+        android:layout_alignParentEnd="true"
+        android:text="@android:string/cancel"
+        android:textColor="?attr/colorSecondaryVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:rippleColor="?attr/colorSecondary"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

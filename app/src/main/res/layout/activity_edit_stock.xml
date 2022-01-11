@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    tools:context=".ui.fragment.stock.EditStockActivity">
+
+    <TextView
+        android:id="@+id/lblMenuType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tipe_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spMenuType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:spinnerMode="dropdown"
+        android:entries="@array/menu_type"
+        app:layout_constraintTop_toBottomOf="@id/lblMenuType"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutMenuName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:hint="@string/menu_name"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:layout_constraintTop_toBottomOf="@id/spMenuType"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etMenuName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textCapCharacters"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutStock"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:hint="@string/qty"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:layout_constraintTop_toBottomOf="@id/layoutMenuName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etStock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:selectAllOnFocus="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutHarga"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:hint="@string/harga"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:prefixText="Rp"
+        app:suffixText=",00"
+        app:layout_constraintTop_toBottomOf="@id/layoutMenuName"
+        app:layout_constraintStart_toEndOf="@id/layoutStock"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CurrencyEditText
+            android:id="@+id/etHarga"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:inputType="number"
+            android:selectAllOnFocus="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        android:text="@string/delete"
+        android:visibility="gone"
+        android:backgroundTint="#ed4245"
+        app:icon="@drawable/ic_baseline_delete_24"
+        app:layout_constraintTop_toBottomOf="@id/layoutHarga"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        android:text="@string/save"
+        app:icon="@drawable/ic_baseline_save_24"
+        app:layout_constraintTop_toBottomOf="@id/layoutHarga"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
